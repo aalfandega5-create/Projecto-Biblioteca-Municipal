@@ -540,3 +540,132 @@ public class Main {
     // ==========================================
     // MOSTRAR DADOS DE UM LIVRO
     // ==========================================
+    
+    public static void mostrarDadosLivro(int indice) {
+
+        System.out.println();
+
+        System.out.println(
+                "ID: " + idLivros[indice]
+        );
+
+        System.out.println(
+                "TÃ­tulo: " + titulos[indice]
+        );
+
+        System.out.println(
+                "Autor: " + autores[indice]
+        );
+
+        System.out.println(
+                "Ano de publicaÃ§Ã£o: "
+                + anosPublicacao[indice]
+        );
+
+        System.out.println(
+                "Quantidade disponÃ­vel: "
+                + quantidades[indice]
+        );
+
+        System.out.println(
+                "Total de emprÃ©stimos: "
+                + totalEmprestimos[indice]
+        );
+
+        System.out.println(
+                "------------------------------------------"
+        );
+    }
+
+    // ==========================================
+    // LER INTEIRO
+    // ==========================================
+
+    public static int lerInteiro(String mensagem) {
+
+        while (true) {
+
+            System.out.print(mensagem);
+
+            String entrada =
+                    scanner.nextLine().trim();
+
+            try {
+
+                return Integer.parseInt(entrada);
+
+            } catch (NumberFormatException e) {
+
+                System.out.println(
+                        "Erro: introduza um nÃºmero inteiro vÃ¡lido."
+                );
+            }
+        }
+    }
+
+    // ==========================================
+    // LER INTEIRO POSITIVO
+    // ==========================================
+
+    public static int lerInteiroPositivo(String mensagem) {
+
+        while (true) {
+
+            int valor = lerInteiro(mensagem);
+
+            if (valor > 0) {
+
+                return valor;
+            }
+
+            System.out.println(
+                    "Erro: o valor deve ser maior que zero."
+            );
+        }
+    }
+
+    // ==========================================
+    // LER INTEIRO NÃƒO NEGATIVO
+    // ==========================================
+
+    public static int lerInteiroNaoNegativo(String mensagem) {
+
+        while (true) {
+
+            int valor = lerInteiro(mensagem);
+
+            if (valor >= 0) {
+
+                return valor;
+            }
+
+            System.out.println(
+                    "Erro: o valor nÃ£o pode ser negativo."
+            );
+        }
+    }
+
+    // ==========================================
+    // LER TEXTO NÃƒO VAZIO
+    // ==========================================
+
+    public static String lerTextoNaoVazio(String mensagem) {
+
+        while (true) {
+
+            System.out.print(mensagem);
+
+            String texto =
+                    scanner.nextLine().trim();
+
+            if (!texto.isEmpty()) {
+
+                return texto;
+            }
+
+            System.out.println(
+                    "Erro: este campo nÃ£o pode ficar vazio."
+            );
+        }
+    }
+}
